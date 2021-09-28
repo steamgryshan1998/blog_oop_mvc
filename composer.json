@@ -1,0 +1,13 @@
+{
+    "name": "developer/php_blog.com",
+    "authors": [
+        {
+            "name": "steamgryshan1998",
+            "email": "steamgryshan1998@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "classmap": ["config/database.php"]
+    }
+}
