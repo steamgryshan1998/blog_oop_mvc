@@ -1,16 +1,42 @@
 <?php
-    //подключаем файл с скомпилированными(после composer install) параметрами автозагрузки; dirname() - возвращает имя
-    // родительского каталога, __DIR__ - содержит путь к текущему файлу от корня
-    require dirname(__DIR__).'/vendor/autoload.php';
+//    function SumOfDigits($d):int
+//    {
+//        $d = (string)$d;
+//        $arr = str_split($d);
+//        $sum = 0;
+//        for($x = 0; $x < count($arr); $x++){
+//            $sum+=$arr[$x];
+//        }
+//        return $sum;
+//    }
+//
+//    function LuckyTicket():int
+//    {
+//        $amount = 0;
+//        for($i = 0; $i < 1000; $i++){
+//            for($j = 0; $j < 1000; $j++){
+//                if(SumOfDigits($i) == SumOfDigits($j)){
+//                    $amount++;
+//                }
+//            }
+//        }
+//        return $amount;
+//    }
+//
+//    echo LuckyTicket()." Ticketa Lol";
 
-    //подключаем пространство имен, где реализован класс для подключения к БД
-    use DB\DB;
+//dirname - функция, возвращающая родительскую директорию файла. __DIR__ - константа, содержащая путь
+// к текущему файлу от корня
+require_once dirname(__DIR__).'/vendor/autoload.php';
+//позволяем использовать класс Application в index.php
+use app\core\Application;
 
-    //создаем новый объект класса DB
-    $db1 = new DB();
-    //получаем доступ к методу __getInstance класса DB
-    var_dump($db1->__getInstance());
+$app = new Application();
 
+$app->router->get("/", function (){
+    return "Hello world!";
+});
 
+//$app->run();
 
 

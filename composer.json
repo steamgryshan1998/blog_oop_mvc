@@ -1,13 +1,16 @@
 {
     "name": "developer/php_blog.com",
+    "description": "Simple mvc blog-application",
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
     "authors": [
         {
             "name": "steamgryshan1998",
             "email": "steamgryshan1998@gmail.com"
         }
     ],
-    "require": {},
-    "autoload": {
-        "classmap": ["config/database.php"]
-    }
+    "require": {}
 }
